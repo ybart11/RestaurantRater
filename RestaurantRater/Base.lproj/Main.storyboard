@@ -11,15 +11,15 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="RestaurantRater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="BYZ-38-t0r" customClass="MainViewController" customModule="RestaurantRater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-Uu-uIh">
-                                <rect key="frame" x="40" y="203" width="313" height="98"/>
+                                <rect key="frame" x="40" y="143" width="313" height="98"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-4L-Jkg">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-4L-Jkg">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-BC-leZ">
@@ -29,13 +29,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHN-mF-LO3">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="233.33333333333331" height="34"/>
+                                                <rect key="frame" x="87.666666666666671" y="0.0" width="225.33333333333331" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Abn-v7-3K0">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Abn-v7-3K0">
                                         <rect key="frame" x="0.0" y="64" width="313" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAH-Di-c75">
@@ -45,7 +45,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6h-76-6xL">
-                                                <rect key="frame" x="97.333333333333357" y="0.0" width="215.66666666666663" height="34"/>
+                                                <rect key="frame" x="87.333333333333329" y="0.0" width="225.66666666666669" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcO-ee-hTW">
-                                <rect key="frame" x="148.33333333333334" y="331" width="96.666666666666657" height="34.333333333333314"/>
+                                <rect key="frame" x="148.33333333333334" y="271" width="96.666666666666657" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Rate Dish"/>
                                 <connections>
@@ -67,13 +67,17 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FQM-Uu-uIh" secondAttribute="trailing" constant="40" id="4gV-mf-AMs"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5aV-2x-Cch"/>
-                            <constraint firstItem="FQM-Uu-uIh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KSO-q1-iBI"/>
+                            <constraint firstItem="FQM-Uu-uIh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="KSO-q1-iBI"/>
                             <constraint firstItem="FcO-ee-hTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ecQ-iG-omf"/>
                             <constraint firstItem="FcO-ee-hTW" firstAttribute="top" secondItem="FQM-Uu-uIh" secondAttribute="bottom" constant="30" id="k8A-4v-goC"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xXf-ZZ-keO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant" largeTitleDisplayMode="always" id="Hiz-ZD-uMt"/>
+                    <connections>
+                        <outlet property="txtRestaurantAddress" destination="M6h-76-6xL" id="htK-Tl-fw4"/>
+                        <outlet property="txtRestaurantName" destination="HHN-mF-LO3" id="Gof-sR-Uro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,18 +86,92 @@
         <!--RateDish-->
         <scene sceneID="TOF-HZ-RVS">
             <objects>
-                <viewController title="RateDish" id="8nP-S1-hcp" sceneMemberID="viewController">
+                <viewController title="RateDish" id="8nP-S1-hcp" customClass="RateDishViewController" customModule="RestaurantRater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUT-Ht-2mw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zEI-Rt-FDr">
+                                <rect key="frame" x="40" y="143" width="313" height="98"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-3u-TDK">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Dish Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXg-Qh-dZP">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7U-F2-gpK">
+                                                <rect key="frame" x="115.66666666666664" y="0.0" width="197.33333333333337" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="EXi-9L-kxQ">
+                                        <rect key="frame" x="0.0" y="64" width="313" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Dish Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-1D-Uvs">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sqo-tW-2Tx">
+                                                <rect key="frame" x="116" y="0.0" width="197" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-ja-h2h">
+                                <rect key="frame" x="20" y="281" width="353" height="59.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cm-ld-cZ4">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Rate Dish">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-NA-Hwu">
+                                        <rect key="frame" x="0.0" y="28.333333333333314" width="353" height="32"/>
+                                        <segments>
+                                            <segment title="1"/>
+                                            <segment title="2"/>
+                                            <segment title="3"/>
+                                            <segment title="4"/>
+                                            <segment title="5"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="c9Q-MT-mB7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c9Q-MT-mB7" firstAttribute="trailing" secondItem="zEI-Rt-FDr" secondAttribute="trailing" constant="40" id="2No-5k-MdE"/>
+                            <constraint firstItem="zEI-Rt-FDr" firstAttribute="top" secondItem="c9Q-MT-mB7" secondAttribute="top" constant="40" id="2fG-5J-rOk"/>
+                            <constraint firstItem="zEI-Rt-FDr" firstAttribute="leading" secondItem="c9Q-MT-mB7" secondAttribute="leading" constant="40" id="9U8-U8-qFZ"/>
+                            <constraint firstItem="Hzb-ja-h2h" firstAttribute="leading" secondItem="QUT-Ht-2mw" secondAttribute="leading" constant="20" id="Edc-v3-8TR"/>
+                            <constraint firstItem="c9Q-MT-mB7" firstAttribute="trailing" secondItem="Hzb-ja-h2h" secondAttribute="trailing" constant="20" id="Jjf-Vy-I9F"/>
+                            <constraint firstItem="Hzb-ja-h2h" firstAttribute="top" secondItem="zEI-Rt-FDr" secondAttribute="bottom" constant="40" id="f16-xm-ftQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Entree" id="7Wc-hc-JvA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3p-0r-Wwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818" y="4"/>
+            <point key="canvasLocation" x="2785" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QZx-lA-dIF">
