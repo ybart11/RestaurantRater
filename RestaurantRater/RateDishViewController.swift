@@ -9,10 +9,6 @@ import UIKit
 import CoreData
 
 
-protocol RateDishViewControllerDelegate: AnyObject {
-    
-}
-
 class RateDishViewController: UIViewController {
     
    
@@ -21,13 +17,11 @@ class RateDishViewController: UIViewController {
     @IBOutlet weak var txtDishType: UITextField!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var currentEntree: Entree?
-    
     // Add a property to hold the restaurant name
     var restaurantNameHolder: String?
         
-    weak var delegate: RateDishViewControllerDelegate?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
 
     
     override func viewDidLoad() {
@@ -40,25 +34,50 @@ class RateDishViewController: UIViewController {
         
         // Add a save button to the navigation bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveEntree))
-
-        
     }
     
     @objc func saveEntree() {
-        guard let restaurantName = restaurantNameHolder, !restaurantName.isEmpty else {
-                return
-            }
-            
-            let context = appDelegate.persistentContainer.viewContext
-            
-            if currentEntree == nil {
-                currentEntree = Entree(context: context)
-            }
+        let context = appDelegate.persistentContainer.viewContext
         
-        currentEntree?.ename = txtDishName.text
-        currentEntree?.etype = txtDishType.text
-        currentEntree?.erating = Int16(segmentedControl.selectedSegmentIndex)
-
-        appDelegate.saveContext()
+        // Create a new instance of the Entree entity
+        let newEntree = Entree(entity: Entree.entity(), insertInto: context)
+            
+        // Set the properties of the new Entree object
+        newEntree.ename = txtDishName.text
+        newEntree.etype = txtDishType.text
+        newEntree.erating = Int16(segmentedControl.selectedSegmentIndex + 1)
+        
+        // Set the relationship between the new Dish object and the corresponding Restaurant object
+        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "rname == %@", restaurantNameHolder!)
+        
+        do {
+            let restaurants = try context.fetch(fetchRequest)
+            if let restaurant = restaurants.first {
+                newEntree.restaurant = restaurant
+            }
+        } catch let error as NSError {
+            print("Could not fetch restaurants. \(error), \(error.userInfo)")
+        }
+        
+        do {
+            try context.save()
+            print("Data saved successfully!")
+            
+            // Create and show an alert controller to notify the user that the data was saved successfully
+                let alertController = UIAlertController(title: "Saved", message: "Your dish has been saved.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                present(alertController, animated: true, completion: nil)
+            
+        } catch let error as NSError {
+            print("Could not save data. \(error), \(error.userInfo)")
+        }
+    }
+    
+    // Removes focus from the textfield when user hits return on the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

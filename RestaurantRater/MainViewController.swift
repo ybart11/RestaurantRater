@@ -50,6 +50,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         appDelegate.saveContext()
     }
     
+    // Removes focus from the textfield when user hits return on the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
