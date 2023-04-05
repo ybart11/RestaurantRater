@@ -1,0 +1,16 @@
+
+let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+fetchRequest.predicate = NSPredicate(format: "rname == %@", restaurantNameHolder!)
+
+Explain:
+These two lines of code create a fetch request for the Restaurant entity, with a predicate that filters the results to only include restaurants with the rname attribute equal to the restaurantNameHolder property value.
+
+NSFetchRequest is a class in Core Data that is used to fetch objects from the persistent store. In this case, fetchRequest is an instance of NSFetchRequest that specifies that we want to fetch objects of type Restaurant. The Restaurant.fetchRequest() method returns an NSFetchRequest object that is pre-configured to fetch objects of the Restaurant entity type.
+
+fetchRequest.predicate sets the predicate for the fetch request, which is a filter that specifies the criteria that objects must match to be returned by the fetch request. In this case, the predicate is created using an NSPredicate object with a format string that specifies that we want to filter the results to only include Restaurant objects where the rname attribute is equal to the value of restaurantNameHolder. The %@ placeholder in the format string is replaced with the value of restaurantNameHolder when the predicate is evaluated
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+

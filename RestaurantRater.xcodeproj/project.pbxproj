@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570BA45E29DE17BF0009D8E9 /* CodeExplanation in Resources */ = {isa = PBXBuildFile; fileRef = 570BA45D29DE17BF0009D8E9 /* CodeExplanation */; };
 		571840A829DC7D6C005C4C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571840A729DC7D6C005C4C7A /* AppDelegate.swift */; };
 		571840AA29DC7D6C005C4C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571840A929DC7D6C005C4C7A /* SceneDelegate.swift */; };
 		571840AC29DC7D6C005C4C7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571840AB29DC7D6C005C4C7A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570BA45D29DE17BF0009D8E9 /* CodeExplanation */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeExplanation; sourceTree = "<group>"; };
 		571840A429DC7D6C005C4C7A /* RestaurantRater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantRater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		571840A729DC7D6C005C4C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		571840A929DC7D6C005C4C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				571840C229DC921A005C4C7A /* MainViewController.swift */,
 				571840C429DC9235005C4C7A /* RateDishViewController.swift */,
 				571840C929DCC4C2005C4C7A /* RestaurantModel.xcdatamodeld */,
+				570BA45D29DE17BF0009D8E9 /* CodeExplanation */,
 			);
 			path = RestaurantRater;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				571840B429DC7D6E005C4C7A /* LaunchScreen.storyboard in Resources */,
 				571840B129DC7D6E005C4C7A /* Assets.xcassets in Resources */,
+				570BA45E29DE17BF0009D8E9 /* CodeExplanation in Resources */,
 				571840AF29DC7D6C005C4C7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
