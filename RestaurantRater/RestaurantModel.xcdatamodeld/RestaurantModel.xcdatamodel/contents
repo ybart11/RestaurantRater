@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entree" representedClassName="Entree" syncable="YES" codeGenerationType="class">
+        <attribute name="ename" optional="YES" attributeType="String"/>
+        <attribute name="erating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="etype" optional="YES" attributeType="String"/>
+        <relationship name="restaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="entrees" inverseEntity="Restaurant"/>
+    </entity>
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
         <attribute name="raddress" optional="YES" attributeType="String"/>
         <attribute name="rname" optional="YES" attributeType="String"/>
+        <relationship name="entrees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entree" inverseName="restaurant" inverseEntity="Entree"/>
     </entity>
 </model>

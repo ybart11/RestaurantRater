@@ -54,4 +54,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    // Add a prepare(for:sender:) method to pass the restaurant name to the RateDishViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RateDishSegue" {
+            if let rateDishVC = segue.destination as? RateDishViewController {
+                // Pass the restaurant name to the RateDishViewController
+                rateDishVC.restaurantNameHolder = txtRestaurantName.text
+            }
+        }
+    }
 }
