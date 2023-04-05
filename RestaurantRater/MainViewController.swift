@@ -47,7 +47,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func saveRestaurant() {
+        
         appDelegate.saveContext()
+        
+        let alert = UIAlertController(title: "Saved", message: "The restaurant has been saved.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // Removes focus from the textfield when user hits return on the keyboard

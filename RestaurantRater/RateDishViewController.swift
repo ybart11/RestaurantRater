@@ -30,7 +30,7 @@ class RateDishViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Set the restaurant name label text to the restaurant name passed from MainViewController
-        restaurantNameLabel.text = restaurantNameHolder
+        restaurantNameLabel.text = "Rate Dish for: " + restaurantNameHolder!
         
         // Add a save button to the navigation bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveEntree))
