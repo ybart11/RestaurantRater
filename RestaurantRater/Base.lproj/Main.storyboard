@@ -174,7 +174,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Entree" id="7Wc-hc-JvA"/>
                     <connections>
-                        <outlet property="restaurantName" destination="lqP-7P-Wif" id="1hj-3s-aAU"/>
+                        <outlet property="restaurantNameLabel" destination="lqP-7P-Wif" id="XLb-jv-XlW"/>
                         <outlet property="segmentedControl" destination="Htd-NA-Hwu" id="QOe-JH-9yY"/>
                         <outlet property="txtDishName" destination="N7U-F2-gpK" id="0Wg-ie-SJ2"/>
                         <outlet property="txtDishType" destination="sqo-tW-2Tx" id="tho-ng-xyN"/>
