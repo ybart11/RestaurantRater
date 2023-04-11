@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-Uu-uIh">
-                                <rect key="frame" x="40" y="143" width="313" height="98"/>
+                                <rect key="frame" x="40" y="99" width="313" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-4L-Jkg">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
@@ -55,7 +55,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcO-ee-hTW">
-                                <rect key="frame" x="148.33333333333334" y="271" width="96.666666666666657" height="34.333333333333314"/>
+                                <rect key="frame" x="148.33333333333334" y="227" width="96.666666666666657" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background">
@@ -89,18 +89,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915.2671755725189" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2659" y="4"/>
         </scene>
         <!--RateDish-->
         <scene sceneID="TOF-HZ-RVS">
             <objects>
                 <viewController title="RateDish" id="8nP-S1-hcp" customClass="RateDishViewController" customModule="RestaurantRater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUT-Ht-2mw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zEI-Rt-FDr">
-                                <rect key="frame" x="40" y="143" width="313" height="98"/>
+                                <rect key="frame" x="40" y="99" width="313" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-3u-TDK">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
@@ -137,7 +137,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O53-VY-3PS">
-                                <rect key="frame" x="25" y="291" width="343" height="61.333333333333314"/>
+                                <rect key="frame" x="25" y="247.00000000000003" width="343" height="61.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="t4R-QM-oBS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.333333333333332"/>
@@ -185,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3p-0r-Wwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783.969465648855" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="3547" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QZx-lA-dIF">
@@ -198,12 +198,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QH9-fG-eJu"/>
+                        <segue destination="5HI-zu-kgi" kind="relationship" relationship="rootViewController" id="POh-X8-j5U"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJe-Lm-6PN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="988.54961832061065" y="3.5211267605633805"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="07T-qo-7UQ">
+            <objects>
+                <tableViewController id="5HI-zu-kgi" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1xg-OB-iYa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lZn-Eh-Xs3">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZn-Eh-Xs3" id="hZw-7A-bQx">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5HI-zu-kgi" id="0Zx-3U-2KX"/>
+                            <outlet property="delegate" destination="5HI-zu-kgi" id="X4J-B6-lOk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="V7C-7L-qR0"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rs8-6b-qJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850" y="4"/>
         </scene>
     </scenes>
     <resources>

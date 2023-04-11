@@ -17,6 +17,7 @@
 		571840C329DC921A005C4C7A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571840C229DC921A005C4C7A /* MainViewController.swift */; };
 		571840C529DC9235005C4C7A /* RateDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571840C429DC9235005C4C7A /* RateDishViewController.swift */; };
 		571840CB29DCC4C2005C4C7A /* RestaurantModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571840C929DCC4C2005C4C7A /* RestaurantModel.xcdatamodeld */; };
+		57AC150C29E5C1E4002FEFF5 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AC150B29E5C1E4002FEFF5 /* RestaurantsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		571840C229DC921A005C4C7A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		571840C429DC9235005C4C7A /* RateDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDishViewController.swift; sourceTree = "<group>"; };
 		571840CA29DCC4C2005C4C7A /* RestaurantModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RestaurantModel.xcdatamodel; sourceTree = "<group>"; };
+		57AC150B29E5C1E4002FEFF5 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				571840A929DC7D6C005C4C7A /* SceneDelegate.swift */,
 				571840AB29DC7D6C005C4C7A /* ViewController.swift */,
 				571840AD29DC7D6C005C4C7A /* Main.storyboard */,
+				57AC150B29E5C1E4002FEFF5 /* RestaurantsTableViewController.swift */,
 				571840B029DC7D6E005C4C7A /* Assets.xcassets */,
 				571840B229DC7D6E005C4C7A /* LaunchScreen.storyboard */,
 				571840B529DC7D6E005C4C7A /* Info.plist */,
@@ -157,6 +160,7 @@
 				571840C529DC9235005C4C7A /* RateDishViewController.swift in Sources */,
 				571840CB29DCC4C2005C4C7A /* RestaurantModel.xcdatamodeld in Sources */,
 				571840C329DC921A005C4C7A /* MainViewController.swift in Sources */,
+				57AC150C29E5C1E4002FEFF5 /* RestaurantsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
