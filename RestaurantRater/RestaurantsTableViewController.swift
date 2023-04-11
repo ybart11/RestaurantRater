@@ -6,19 +6,34 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantsTableViewController: UITableViewController {
     
-    let restaurants = ["Chiptole", "Chick-fi-la", "Burger King", "Pizza Hut", "Gustos", "BT"]
+    
+    var restaurants: [NSManagedObject] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadDataFromDatabase()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated
+    }
+    
+    func loadDataFromDatabase() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Restaurant")
+        
+        do {
+            restaurants = try context.fetch(request)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 
     // MARK: - Table view data source
@@ -36,7 +51,9 @@ class RestaurantsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantsCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = restaurants[indexPath.row]
+        let restaurant = restaurants[indexPath.row] as? Restaurant
+        cell.textLabel?.text = restaurant?.rname
+        cell.detailTextLabel?.text = restaurant?.raddress
 
         return cell
     }
