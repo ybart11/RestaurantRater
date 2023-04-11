@@ -27,14 +27,17 @@ class RestaurantsTableViewController: UITableViewController {
     
     func loadDataFromDatabase() {
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Restaurant")
-        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurant")
+        let entreeKeyPath = #keyPath(Restaurant.entrees)
+        request.relationshipKeyPathsForPrefetching = [entreeKeyPath]
+
         do {
-            restaurants = try context.fetch(request)
+            restaurants = try context.fetch(request) as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
+
 
     // MARK: - Table view data source
 
@@ -53,10 +56,17 @@ class RestaurantsTableViewController: UITableViewController {
         // Configure the cell...
         let restaurant = restaurants[indexPath.row] as? Restaurant
         cell.textLabel?.text = restaurant?.rname
-        cell.detailTextLabel?.text = restaurant?.raddress
+        cell.detailTextLabel?.text = ""
+
+        if let entrees = restaurant?.entrees?.allObjects as? [Entree], entrees.count > 0 {
+            // Concatenate entree names into a comma-separated string
+            let entreeNames = entrees.map { $0.ename ?? "" }.joined(separator: ", ")
+            cell.detailTextLabel?.text = entreeNames
+        }
 
         return cell
     }
+
 
 
     /*
