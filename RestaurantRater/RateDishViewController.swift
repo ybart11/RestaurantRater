@@ -98,11 +98,13 @@ class RateDishViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         if let entree = currentEntree {
+            
             // Update an existing Entree object
             entree.ename = txtDishName.text
             entree.etype = txtDishType.text
             entree.erating = Int16(segmentedControl.selectedSegmentIndex + 1)
         } else {
+            
             // Create a new Entree object
             let newEntree = Entree(entity: Entree.entity(), insertInto: context)
             newEntree.ename = txtDishName.text

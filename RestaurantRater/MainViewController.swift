@@ -81,7 +81,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
             }
         }
         
-        // For Table View
+        // For Table View using detial disclosure button
         if segue.identifier == "EditEntree" {
             let entreeController = segue.destination as? RateDishViewController
             let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
@@ -89,6 +89,16 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
             entreeController?.currentEntree = selectedEntree!
             entreeController?.restaurantNameHolder = selectedEntree?.restaurant?.rname
         }
+        
+        // For Table View using tap on object
+//        if segue.identifier == "EditEntree" {
+//                if let entreeController = segue.destination as? RateDishViewController,
+//                   let selectedEntree = sender as? Entree {
+//                    // Pass the current entree and its restaurant name to the RateDishViewController
+//                    entreeController.currentEntree = selectedEntree
+//                    entreeController.restaurantNameHolder = selectedEntree.restaurant?.rname
+//                }
+//            }
     }
     
     // MARK: Table View Data Source
@@ -141,8 +151,28 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         // Compiler will infer that this is property of - - -
         cell.accessoryType = .detailDisclosureButton
+        
+        // For tapping object
+//        cell.selectionStyle = .default
+
 
         return cell
     }
+    
+    
+        // For Tapping object
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        // Deselect the row to remove the highlight
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//        // Get the selected entree
+//        guard let selectedEntree = entrees[indexPath.row] as? Entree else {
+//            return
+//        }
+//
+//        // Perform the segue to the RateDishViewController
+//        performSegue(withIdentifier: "EditEntree", sender: selectedEntree)
+//    }
+
     
 }
