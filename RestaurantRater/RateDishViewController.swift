@@ -50,6 +50,7 @@ class RateDishViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveEntree))
     }
     
+    
 //    @objc func saveEntree() {
 //        let context = appDelegate.persistentContainer.viewContext
 //
@@ -132,8 +133,10 @@ class RateDishViewController: UIViewController {
             
             // Create and show an alert controller to notify the user that the data was saved successfully
             let alertController = UIAlertController(title: "Saved", message: "Your dish has been saved.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertController, animated: true, completion: nil)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.navigationController?.popViewController(animated: true) // added completion handler
+            }))
+            self.present(alertController, animated: true)
                     
         } catch let error as NSError {
             print("Could not save data. \(error), \(error.userInfo)")

@@ -40,8 +40,12 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.saveRestaurant))
         
+    }
+    
+    // Ensure data is reloaded from the database
+    override func viewWillAppear(_ animated: Bool) {
         loadDataFromDatabase()
-        
+        tableView.reloadData()
     }
     
     
