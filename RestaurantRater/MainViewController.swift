@@ -21,7 +21,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var restaurants: [NSManagedObject] = []
+    var entrees: [NSManagedObject] = []
 
     
     override func viewDidLoad() {
@@ -85,8 +85,9 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         if segue.identifier == "EditEntree" {
             let entreeController = segue.destination as? RateDishViewController
             let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
-            let selectedEntree = restaurants[selectedRow!] as? Entree
+            let selectedEntree = entrees[selectedRow!] as? Entree
             entreeController?.currentEntree = selectedEntree!
+            entreeController?.restaurantNameHolder = selectedEntree?.restaurant?.rname
         }
     }
     
@@ -100,11 +101,9 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     func loadDataFromDatabase() {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSManagedObject>(entityName: "Entree")
-//        let entreeKeyPath = #keyPath(Restaurant.entrees)
-//        request.relationshipKeyPathsForPrefetching = [entreeKeyPath]
 
         do {
-            restaurants = try context.fetch(request)
+            entrees = try context.fetch(request)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -116,14 +115,14 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows you want to display in the table view
-        return restaurants.count
+        return entrees.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantsCell", for: indexPath)
 
         // Configure the cell...
-        let entree = restaurants[indexPath.row] as? Entree
+        let entree = entrees[indexPath.row] as? Entree
         cell.textLabel?.text = entree?.ename
         
         // Conditional Binding
