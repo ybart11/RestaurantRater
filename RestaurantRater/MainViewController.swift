@@ -164,7 +164,28 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     }
     
     
-        // For Tapping object
+    // Adds the swiping across the row feature to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let entree = entrees[indexPath.row] as? Entree
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(entree!)
+
+            do {
+                try context.save()
+            }
+            catch {
+                fatalError("Error saving context: \(error)")
+            }
+
+            loadDataFromDatabase()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
+//        // For Tapping object
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        // Deselect the row to remove the highlight
 //        tableView.deselectRow(at: indexPath, animated: true)
