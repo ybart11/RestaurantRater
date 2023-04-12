@@ -80,6 +80,14 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
                 rateDishVC.restaurantNameHolder = txtRestaurantName.text
             }
         }
+        
+        // For Table View
+        if segue.identifier == "EditEntree" {
+            let entreeController = segue.destination as? RateDishViewController
+            let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
+            let selectedEntree = restaurants[selectedRow!] as? Entree
+            entreeController?.currentEntree = selectedEntree!
+        }
     }
     
     // MARK: Table View Data Source
@@ -124,6 +132,16 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         } else {
             cell.detailTextLabel?.text = "No Rating"
         }
+            
+        // Optional Binding
+        if let existingText = cell.detailTextLabel?.text {
+            cell.detailTextLabel?.text = existingText + "         Type: " + (entree?.etype ?? "")
+        } else {
+            cell.detailTextLabel?.text = entree?.etype
+        }
+        
+        // Compiler will infer that this is property of - - -
+        cell.accessoryType = .detailDisclosureButton
 
         return cell
     }

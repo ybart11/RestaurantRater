@@ -77,7 +77,7 @@
                                 </constraints>
                                 <color key="separatorColor" name="AccentColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="RestaurantsCell" textLabel="nI5-7g-j8h" detailTextLabel="QpO-ys-eZe" rowHeight="74" style="IBUITableViewCellStyleSubtitle" id="r2U-4h-Tap" customClass="CustomTableViewCell" customModule="RestaurantRater" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="RestaurantsCell" textLabel="nI5-7g-j8h" detailTextLabel="QpO-ys-eZe" rowHeight="74" style="IBUITableViewCellStyleSubtitle" id="r2U-4h-Tap">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r2U-4h-Tap" id="wC8-Ax-KT3">
@@ -100,6 +100,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8nP-S1-hcp" kind="show" identifier="EditEntree" trigger="accessoryAction" id="Ybh-Fj-mJV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -245,6 +248,9 @@
             <point key="canvasLocation" x="988.54961832061065" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ybh-Fj-mJV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

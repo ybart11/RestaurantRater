@@ -19,6 +19,8 @@ class RateDishViewController: UIViewController {
     
     // Add a property to hold the restaurant name
     var restaurantNameHolder: String?
+    
+    var currentEntree: Entree? 
         
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -29,8 +31,20 @@ class RateDishViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        if currentEntree != nil {
+            txtDishName.text = currentEntree!.ename
+            txtDishType.text = currentEntree!.etype
+            segmentedControl.selectedSegmentIndex = Int(currentEntree!.erating) - 1
+        }
+        
         // Set the restaurant name label text to the restaurant name passed from MainViewController
-        restaurantNameLabel.text = "Rate Dish for: " + restaurantNameHolder!
+        // Optional binding
+        if let restaurantName = restaurantNameHolder {
+            restaurantNameLabel.text = "Rate Dish for: " + restaurantName
+        } else {
+            restaurantNameLabel.text = ""
+        }
+
         
         // Add a save button to the navigation bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveEntree))
