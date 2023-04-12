@@ -8,18 +8,25 @@
 import UIKit
 import CoreData
 
-class MainViewController: UIViewController, UITextFieldDelegate {
-    
+class MainViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet weak var txtRestaurantName: UITextField!
     @IBOutlet weak var txtRestaurantAddress: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     var currentRestaurant: Restaurant?
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let restaurants = ["BT", "Chiptole", "Gustos", "Burger King"]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+
 
         // Do any additional setup after loading the view.
         let textFields: [UITextField] = [txtRestaurantName, txtRestaurantAddress]
@@ -70,4 +77,24 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    // MARK: Table View Data Source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of rows you want to display in the table view
+        return restaurants.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantsCell", for: indexPath)
+        
+        // Configure the cell...
+        cell.textLabel?.text = restaurants[indexPath.row]
+        return cell
+    }
+    
 }

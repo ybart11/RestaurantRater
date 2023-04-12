@@ -69,12 +69,32 @@
                                     <segue destination="8nP-S1-hcp" kind="show" identifier="RateDishSegue" id="ri8-de-yFl"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZRL-XM-vxo">
+                                <rect key="frame" x="0.0" y="355.33333333333326" width="393" height="457"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="457" id="Elt-ox-xfE"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantsCell" id="r2U-4h-Tap">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r2U-4h-Tap" id="wC8-Ax-KT3">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FQM-Uu-uIh" secondAttribute="trailing" constant="40" id="4gV-mf-AMs"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5aV-2x-Cch"/>
+                            <constraint firstItem="ZRL-XM-vxo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="67b-nE-sCY"/>
+                            <constraint firstItem="ZRL-XM-vxo" firstAttribute="top" secondItem="FcO-ee-hTW" secondAttribute="bottom" constant="50" id="FIS-GO-GY1"/>
+                            <constraint firstItem="ZRL-XM-vxo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JgV-qd-gEk"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="KSO-q1-iBI"/>
                             <constraint firstItem="FcO-ee-hTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ecQ-iG-omf"/>
                             <constraint firstItem="FcO-ee-hTW" firstAttribute="top" secondItem="FQM-Uu-uIh" secondAttribute="bottom" constant="30" id="k8A-4v-goC"/>
@@ -83,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant" largeTitleDisplayMode="always" id="Hiz-ZD-uMt"/>
                     <connections>
+                        <outlet property="tableView" destination="ZRL-XM-vxo" id="RXw-IB-Qxt"/>
                         <outlet property="txtRestaurantAddress" destination="M6h-76-6xL" id="htK-Tl-fw4"/>
                         <outlet property="txtRestaurantName" destination="HHN-mF-LO3" id="Gof-sR-Uro"/>
                     </connections>
