@@ -12,5 +12,11 @@ fetchRequest.predicate sets the predicate for the fetch request, which is a filt
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+Optional binding is used to safely unwrap optional values. It is a way to check if an optional has a non-nil value, and if it does, to assign that value to a new constant or variable that can be used safely within the scope of the if statement.
 
+Conditional binding, on the other hand, is a way to conditionally execute code based on the result of an optional binding. It is a way to check if an optional has a non-nil value, and if it does, to execute the code inside the if statement.
 
+In the provided code, the first if statement is an example of conditional binding, as it checks if entree?.erating is non-nil and assigns its value to rating if it is. The second if statement is an example of optional binding, as it checks if cell.detailTextLabel?.text is non-nil and assigns its value to existingText if it is.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+So the entire expression (entree?.etype ?? "") is a way of safely accessing the etype property of the optional entree variable, and providing a default value of an empty string if the etype property is nil

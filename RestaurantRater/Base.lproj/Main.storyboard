@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZRL-XM-vxo">
-                                <rect key="frame" x="0.0" y="355.33333333333326" width="393" height="457"/>
+                                <rect key="frame" x="0.0" y="343" width="393" height="457"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="457" id="Elt-ox-xfE"/>
@@ -114,9 +114,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FQM-Uu-uIh" secondAttribute="trailing" constant="40" id="4gV-mf-AMs"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5aV-2x-Cch"/>
                             <constraint firstItem="ZRL-XM-vxo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="67b-nE-sCY"/>
-                            <constraint firstItem="ZRL-XM-vxo" firstAttribute="top" secondItem="FcO-ee-hTW" secondAttribute="bottom" constant="50" id="FIS-GO-GY1"/>
                             <constraint firstItem="ZRL-XM-vxo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JgV-qd-gEk"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="KSO-q1-iBI"/>
+                            <constraint firstItem="ZRL-XM-vxo" firstAttribute="top" secondItem="FcO-ee-hTW" secondAttribute="bottom" constant="37.666666666666686" id="Z8l-Xs-G9E"/>
                             <constraint firstItem="FcO-ee-hTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ecQ-iG-omf"/>
                             <constraint firstItem="FcO-ee-hTW" firstAttribute="top" secondItem="FQM-Uu-uIh" secondAttribute="bottom" constant="30" id="k8A-4v-goC"/>
                             <constraint firstItem="FQM-Uu-uIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xXf-ZZ-keO"/>
