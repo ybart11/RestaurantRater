@@ -8,17 +8,20 @@
 import UIKit
 import CoreData
 
+
 class MainViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var txtRestaurantName: UITextField!
     @IBOutlet weak var txtRestaurantAddress: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    
+
     var currentRestaurant: Restaurant?
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    let restaurants = ["BT", "Chiptole", "Gustos", "Burger King"]
+    var restaurants: [NSManagedObject] = []
 
     
     override func viewDidLoad() {
@@ -26,8 +29,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-
-
+        
         // Do any additional setup after loading the view.
         let textFields: [UITextField] = [txtRestaurantName, txtRestaurantAddress]
         
@@ -37,6 +39,8 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.saveRestaurant))
+        
+        loadDataFromDatabase()
         
     }
     
@@ -80,6 +84,24 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     // MARK: Table View Data Source
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated
+    }
+    
+    func loadDataFromDatabase() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Entree")
+//        let entreeKeyPath = #keyPath(Restaurant.entrees)
+//        request.relationshipKeyPathsForPrefetching = [entreeKeyPath]
+
+        do {
+            restaurants = try context.fetch(request)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -91,9 +113,18 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantsCell", for: indexPath)
-        
+
         // Configure the cell...
-        cell.textLabel?.text = restaurants[indexPath.row]
+        let entree = restaurants[indexPath.row] as? Entree
+        cell.textLabel?.text = entree?.ename
+        
+        // Conditional Binding
+        if let rating = entree?.erating {
+            cell.detailTextLabel?.text = "Rating: " + String(describing: rating)
+        } else {
+            cell.detailTextLabel?.text = "No Rating"
+        }
+
         return cell
     }
     
