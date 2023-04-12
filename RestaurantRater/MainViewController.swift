@@ -185,8 +185,11 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
     }
     
     
-//        // For Tapping object
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // For Tapping object and Alert message
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        /* Tapping Object */
 //        // Deselect the row to remove the highlight
 //        tableView.deselectRow(at: indexPath, animated: true)
 //
@@ -197,7 +200,26 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
 //
 //        // Perform the segue to the RateDishViewController
 //        performSegue(withIdentifier: "EditEntree", sender: selectedEntree)
-//    }
+        
+        /* Alert when user selects */
+        let selectedEnree = entrees[indexPath.row] as? Entree
+        let name = selectedEnree!.ename!
+        let actionHandler = { (action: UIAlertAction!)  -> Void in self.performSegue(withIdentifier: "EditEntree", sender: tableView.cellForRow(at: indexPath))}
+        
+        let alertController = UIAlertController(title: "Dish selected",
+                                                message: "Selected row: \(indexPath.row) (\(name)) ",
+                                                preferredStyle: .alert)
+        let actionCancel = UIAlertAction(title: "Cancel",
+                                         style: .cancel,
+                                         handler: nil)
+        let actionDetails = UIAlertAction(title: "Show Details",
+                                         style: .default,
+                                         handler: actionHandler)
+        
+        alertController.addAction(actionCancel)
+        alertController.addAction(actionDetails)
+        present(alertController, animated: true, completion: nil)
+    }
 
     
 }
